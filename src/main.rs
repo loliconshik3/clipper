@@ -8,7 +8,9 @@ fn main() {
 
     let mut last_content = ctx.get_contents().unwrap();
     loop {
+        // TODO: Exception in random moment, error: timeout
         let content = ctx.get_contents().unwrap();
+
         if (content != last_content && content != "") {
             last_content = content;
             ctx.set_contents(last_content.to_owned()).unwrap();
